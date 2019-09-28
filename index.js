@@ -11,11 +11,9 @@ function submitData(name, email) {
     return fetch('http://localhost:3000/users', postObj)
     .then(resp => resp.json())
     .then(data => {
-        let elem=document.createElement('h1').innerHTML(data.id);
-        document.appendChild(elem);
+        document.body.innerHTML= data.id;
     })
     .catch(error => {
-        let elem=document.createElement('h1').innerHTML(error.message);
-        document.appendChild(elem);
+        document.body.innerHTML= error.message;
     })
 };
